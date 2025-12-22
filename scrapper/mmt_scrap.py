@@ -3,7 +3,7 @@ from bs4 import BeautifulSoup
 import re
 
 # --- Configuration ---
-HTML_FILE_PATH = "./independent/ss/mmt_res.html"
+HTML_FILE_PATH = "./scrapper/ss/mmt_res.html"
 OUTPUT_CSV_PATH = "flight_data_extracted.csv"
 
 # --- Common MMT Selector Clues (Adjust these based on your specific HTML) ---
@@ -23,7 +23,7 @@ END_DURATION_SELECTOR = 'div[class*="timeInfoRight"]'
 # 5. Selector for the Final Price
 PRICE_SELECTOR = 'div[class*="priceSection"]'
 
-def write_html_to_file(html_content, filename="./independent/ss/mmt_pretty.html"):
+def write_html_to_file(html_content, filename="./scrapper/ss/mmt_pretty.html"):
     with open(filename, 'w', encoding='utf-8') as f:
         f.write(html_content)
 
@@ -36,7 +36,7 @@ def extract_flight_data(html_content):
 
     # Find all flight listing cards
     flight_cards = soup.select(FLIGHT_LISTING_SELECTOR)
-
+ 
     if not flight_cards:
         print(f"Warning: No flight cards found using selector: {FLIGHT_LISTING_SELECTOR}")
         print("Please inspect the HTML to find the correct selector for a single flight block.")

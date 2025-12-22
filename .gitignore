@@ -34,7 +34,7 @@ venv/
 ENV/
 env.bak/
 venv.bak/
-
+latest_logs/
 # OSX / macOS
 .DS_Store
 

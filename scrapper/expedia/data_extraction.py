@@ -95,8 +95,6 @@ def extract_flight_data(html_content):
         except Exception as e:
             print(f"Error processing flight: {e}")
              
-
-  
     return flight_data
 
 def save_to_csv(data, filename):

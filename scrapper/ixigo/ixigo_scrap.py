@@ -59,6 +59,7 @@ def scrap_mmt_sb(origin="LKO", destination="DEL", travel_date="25122025"):
             sr = sb.get_page_source()
             #sr = sb.get_attribute(".listingContainer div","innerHTML")
             write_to_file(sr,filename=f"./scrapper/ss/mmt_res_{i}.html",mode="w")
+            
         print("Scraping completed")
         sb.quit()
 

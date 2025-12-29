@@ -1,15 +1,15 @@
-expedia_scrap.py:197:SB
+mmt_scrap.py:197:SB
 --------------------------------------------------------------------
-Last Page: https://www.expedia.co.in/Flights-Search?flight-type=on&mode=search&trip=oneway&leg1=from:%20(LKO),to:%20(DEL),departure:02/01/2026TANYT,fromType:U,toType:AIRPORT&options=cabinclass:economy&fromDate=02/01/2026&d1=2026-1-2&passengers=adults:1,infantinlap:N
- Duration: 18.00s
+Last Page: https://www.makemytrip.com/flight/search?itinerary=LKO-DEL-28/12/2025&tripType=O&paxType=A-1_C-0_I-0&intl=false&cabinClass=E&lang=eng
+ Duration: 20.99s
   Browser: Chrome 143.0.7499.147
    Driver: chromedriver 143.0.7499.42
-Timestamp: 1766305313  (Unix Timestamp)
-     Date: Sunday, 21 December 2025
-     Time: 1:51:53 PM  (IST, UTC+05:30)
+Timestamp: 1766567272  (Unix Timestamp)
+     Date: Wednesday, 24 December 2025
+     Time: 2:37:52 PM  (IST, UTC+05:30)
 --------------------------------------------------------------------
 Traceback:
   Traceback (most recent call last):
-  File "/Users/mac/Projects/mcp_server/flight-search-mcp/scrapper/expedia/expedia_scrap.py", line 32, in scrap_mmt_sb
+  File "/Users/mac/Projects/mcp_server/flight-search-mcp/scrapper/mmt/mmt_scrap.py", line 17, in scrap_sb
     sb.quit()
 AttributeError: 'BaseCase' object has no attribute 'quit'

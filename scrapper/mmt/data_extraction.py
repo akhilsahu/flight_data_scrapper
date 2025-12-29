@@ -3,7 +3,7 @@ from bs4 import BeautifulSoup
 import re
 
 # --- Configuration ---
-HTML_FILE_PATH = "./scrapper/ss/mmt_res.html"
+HTML_FILE_PATH = "./ss/mmt_res.html"
 OUTPUT_CSV_PATH = "flight_data_extracted.csv"
 
 # --- Common MMT Selector Clues (Adjust these based on your specific HTML) ---
@@ -50,6 +50,10 @@ def extract_flight_data(html_content):
             airline_element = flight_card.select_one(AIRLINE_SELECTOR)
             airline = airline_element.text.strip() if airline_element else "N/A"
 
+            airline_code_element = flight_card.select_one(AIRLINE_CODE_SELECTOR)
+            airline_code = airline_code_element.text.strip() if airline_code_element else "N/A"
+
+
             # 2. Extract Time and City information (Departure and Arrival)
             time_city_groups = flight_card.select(TIME_CITY_GROUP_SELECTOR)
             
@@ -91,14 +95,14 @@ def extract_flight_data(html_content):
 
             flight_data.append({
                 'Airline': airline,
+                'Airline_Code': airline_code,
                 'Departure_Time': departure_time,
                 'Departure_City': departure_city,
                 'Arrival_Time': arrival_time,
                 'Arrival_City': arrival_city,
                 'Layover_Duration': layover_duration,
                 'Layover_City': layover_city,
-                'Arrival_City': arrival_city,
-                'Price': price_element,
+                'Price': raw_price,
                 'Offers': offers
             })
 
